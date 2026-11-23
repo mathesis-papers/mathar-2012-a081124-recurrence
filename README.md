@@ -5,13 +5,15 @@
 Extending Jovovic's generating-function formulas of 25 September 2003 and Barry's array-sum identity (2009, Section 13.2, pp. 283–284), we prove Mathar's recurrence conjectures in the Formula fields of OEIS A081124, revision 8 (24 November 2012), and A084261, revision 9 (30 November 2012), retained in revisions 20 and 29, respectively. A common finite-sum argument proves both recurrences for every n ≥ 3. For the fixed-point polynomials of Fang, Hamaker and Troyka, we also give a parameter-dependent recurrence and self-contained proofs of the continued fractions and Hankel determinants recorded by Hanna and Barry. Further consequences include partial sums and linked factorial-ratio identities.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24412942](https://doi.org/10.5281/zenodo.24412942)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24412941](https://doi.org/10.5281/zenodo.24412941)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [mathar-2012-a081124-recurrence](https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-2012-a081124-recurrence?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-2012-a081124-recurrence?version=2
+Haobo Ma, Wenlin Zhang (2026). Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums. Mathesis, version 2. https://doi.org/10.5281/zenodo.24412942
 
 ## Statement progress
 
