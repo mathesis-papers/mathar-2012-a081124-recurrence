@@ -1,0 +1,95 @@
+{
+  "arithmetic": "Python integers and fractions.Fraction",
+  "checks": [
+    {
+      "claim": "A081124 initial values and recurrence-generated terms versus binomial sum",
+      "indices": [
+        0,
+        256
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "A084261 initial values and recurrence-generated terms versus binomial sum",
+      "indices": [
+        0,
+        256
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Both parity identities",
+      "indices": [
+        0,
+        512
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Pascal and weighted binomial identities for both input sequences",
+      "indices": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Both exponential generating functions, exact coefficients",
+      "degrees": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "The mixed relation between the sequences",
+      "indices": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "OEIS listed sequence prefixes",
+      "status": "pass",
+      "terms": {
+        "A081124": 28,
+        "A084261": 28
+      }
+    }
+  ],
+  "reference_values_sha256": "17477515ccc52a6d2e91d49f4784971c7f76acf075dd142070aff54c7c9e7733",
+  "sample": {
+    "A081124": [
+      1,
+      2,
+      4,
+      8,
+      17,
+      38,
+      90,
+      224,
+      585,
+      1594,
+      4520,
+      13288
+    ],
+    "A084261": [
+      1,
+      1,
+      2,
+      4,
+      9,
+      21,
+      52,
+      134,
+      361,
+      1009,
+      2926,
+      8768
+    ]
+  },
+  "scope": "Finite exact-arithmetic checks; all-index proofs are in note.tex.",
+  "script_sha256": "8751955efd0f21fda1579d8a25fbbe32f4d1e892599befa7f280a5408a258385",
+  "status": "pass"
+}

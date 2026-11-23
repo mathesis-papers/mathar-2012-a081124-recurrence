@@ -1,0 +1,117 @@
+{
+  "arithmetic": "Python integers and fractions.Fraction",
+  "checks": [
+    {
+      "claim": "Weighted recurrence and initial values",
+      "indices": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Weighted partial-sum identity",
+      "indices": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "A161556 row polynomials",
+      "rows": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Formal Jacobi continued-fraction coefficients",
+      "degrees": [
+        0,
+        64
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Hankel determinant product",
+      "determinant_indices": [
+        0,
+        12
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Both shorter inhomogeneous recurrences",
+      "indices": [
+        2,
+        128
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Somos array formula, symmetry, boundary and recurrence",
+      "coordinate_ranges": [
+        [
+          0,
+          48
+        ],
+        [
+          0,
+          48
+        ]
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Somos array antidiagonal sums equal A081124",
+      "indices": [
+        0,
+        48
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Two-part partition product and factorial-ratio EGF coefficients",
+      "indices": [
+        0,
+        512
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "A081125 factorial-ratio recurrence",
+      "indices": [
+        3,
+        512
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "Corrected interval product, rising factorial and swinging-factorial forms",
+      "indices": [
+        0,
+        512
+      ],
+      "status": "pass"
+    },
+    {
+      "claim": "A081125 recorded interval product and SageMath formula fail at n=2; corrected product is 2",
+      "factorial_quotient": 2,
+      "index": 2,
+      "recorded_product": 1,
+      "status": "pass"
+    }
+  ],
+  "parameters": [
+    "-2",
+    "-1",
+    "0",
+    "1/2",
+    "1",
+    "2"
+  ],
+  "scope": "Finite exact-arithmetic checks; the all-index identities have written proofs in note.tex.",
+  "script_sha256": "6d8323440a583b4191d1595d17b4f63b5565034815974cb90ddc1a8d05e6ffc5",
+  "status": "pass"
+}

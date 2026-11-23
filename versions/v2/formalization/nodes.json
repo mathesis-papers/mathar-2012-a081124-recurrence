@@ -1,0 +1,277 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s1",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "For every integer $n\\geq3$,\n\\begin{align}\n 2a_n-4a_{n-1}+(2-n)a_{n-2}+(n-1)a_{n-3}&=0,\n \\\\\n 2c_n-4c_{n-1}+(2-n)c_{n-2}+(n-2)c_{n-3}&=0.\n \n\\end{align}\nThe initial values are $(a_0,a_1,a_2)=(1,2,4)$ and\n$(c_0,c_1,c_2)=(1,1,2)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s2",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "Let $q\\in\\mathbb Q$ and $u_0,u_1,\\ldots\\in\\mathbb Q$ satisfy\n\\begin{equation}\n 2u_{k+3}+2u_{k+2}-(k+3)u_{k+1}-(k+q)u_k=0\n \\qquad(k\\geq0).\n\\end{equation}\nThen $v_n=\\sum_{k=0}^{n}\\binom nk u_k$ satisfies\n\\begin{equation}\n 2v_{n+3}-4v_{n+2}-(n+1)v_{n+1}+(n+3-q)v_n=0\n \\qquad(n\\geq0).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s3",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "Let $H(x)=\\sqrt\\pi\\,e^{x^2/4}\\erf(x/2)$, where\n$\\erf(z)=\\frac{2}{\\sqrt\\pi}\\int_0^z e^{-t^2}\\,dt$.\nThe exponential generating functions are\n\\begin{align}\n A(x):=\\sum_{n\\geq0}a_n\\frac{x^n}{n!}\n &=e^x\\bigl(1+(1+x/2)H(x)\\bigr),\\\\\n C(x):=\\sum_{n\\geq0}c_n\\frac{x^n}{n!}\n &=e^x\\bigl(1+(x/2)H(x)\\bigr).\n\\end{align}\nThey are the formulas recorded by Jovovic on 25 September 2003\nin A081124 and A084261. Moreover, for every $n\\geq0$,\n\\begin{equation}\n c_{n+1}=a_{n+1}-a_n,\\qquad a_n=\\sum_{j=0}^{n}c_j.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s4",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "For every $n\\geq2$,\n\\begin{equation}\n c_n=1+\\frac n2a_{n-2},\\qquad\n a_n=1+a_{n-1}+\\frac n2a_{n-2}.\n\\end{equation}\nLet $B(i,j)=\\sum_{k\\geq0}\\binom ik\\binom jk k!$ for integers $i,j\\geq0$,\nwhere out-of-range binomial coefficients vanish. Then\n\\begin{equation}\n a_n=\\sum_{i+j=n}B(i,j)\\qquad(n\\geq0).\n\\end{equation}\nThis is Somos's symmetric array A088699 \\cite{somos}; its antidiagonal\nsum identity was also established by Barry\n\\cite[Section~13.2, pp.~283--284]{barry-thesis}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s5",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "For $n\\geq3$,\n\\begin{equation}\n 2c_n(t)-4t c_{n-1}(t)+(2t^2-n)c_{n-2}(t)\n       +(n-2)t c_{n-3}(t)=0,\n\\end{equation}\nwith $c_0(t)=1$, $c_1(t)=t$, $c_2(t)=t^2+1$. Also, for $n\\geq0$,\n\\begin{equation}\n a_n(t)=c_n(t)+\\sum_{j=0}^{n-1}t^{n-1-j}c_j(t),\n\\end{equation}\nwhere an empty sum is zero.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s6",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "Set $\\lambda_j=\\lfloor(j+1)/2\\rfloor$ for $j\\geq1$. Then\n\\begin{equation}\n \\sum_{n\\geq0}c_n(t)z^n\n =\\cfrac{1}{1-tz-\\cfrac{\\lambda_1z^2}{1-tz-\n       \\cfrac{\\lambda_2z^2}{1-tz-\\cfrac{\\lambda_3z^2}{\\ddots}}}},\n\\end{equation}\nwhere $(\\lambda_1,\\lambda_2,\\lambda_3,\\ldots)=(1,1,2,2,3,3,\\ldots)$.\nFor $n\\geq0$ the Hankel determinants are independent of $t$ and equal\n\\begin{equation}\n \\det(c_{i+j}(t))_{0\\leq i,j\\leq n}\n =\\prod_{k=0}^{n}\\left\\lfloor\\frac{k+2}{2}\\right\\rfloor^{n-k}.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:mathar-2012-a081124-recurrence:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+      },
+      "lineage": "collected:mathar-2012-a081124-recurrence:s7",
+      "macros": {
+        "\\erf": "\\operatorname{erf}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "mathar-2012-a081124-recurrence",
+      "scope": "in_scope",
+      "statement": "Let $r_n=n!/\\lfloor n/2\\rfloor!$ (A081125). Its exponential generating\nfunction is $(1+x)e^{x^2}$, as recorded by Jovovic on 24 September 2003.\nMathar's recorded recurrence of 26 November 2012 is valid for $n\\geq3$:\n\\begin{equation}\n r_n+2r_{n-1}-2nr_{n-2}+4(2-n)r_{n-3}=0.\n\\end{equation}\nFor $n\\geq1$, $r_n$ is the product of the larger parts in the two-part\npartitions of $n+1$. Write\n$\\Gamma(z)=\\int_0^\\infty v^{z-1}e^{-v}\\,dv$ for real $z>0$.\nIts factorial, product, gamma and swinging-factorial forms are\n\\begin{align}\n r_n&=\\prod_{i=\\lfloor n/2\\rfloor+1}^{n}i\n =\\frac{2^n\\Gamma((n+1+(n\\bmod2))/2)}{\\sqrt\\pi},\\\\\n r_n&=b_n s_n=\\sqrt{n!s_n},\\qquad\n s_n:=\\frac{n!}{(\\lfloor n/2\\rfloor!)^2}.\n\\end{align}\nHere $s_n$ is the swinging factorial A056040.\nEldar's two reciprocal sums of 10 March 2022 are\n\\begin{equation}\n \\sum_{n\\geq0}\\frac1{r_n}=1+\\frac32 H(1),\\qquad\n \\sum_{n\\geq0}\\frac{(-1)^n}{r_n}=1-\\frac12 H(1).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+      "toolchain": null,
+      "version": 2,
+      "work": "mathar-2012-a081124-recurrence"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 102955,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "d326e790fdb3cc001df2342767c5ac15cb571e8a7a6d1c1102b032c0bc753fb6",
+      "sha256": "d326e790fdb3cc001df2342767c5ac15cb571e8a7a6d1c1102b032c0bc753fb6"
+    },
+    "source": {
+      "bytes": 23242,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "527e26d5580875fbd8924fa6c9dd43b5994c23c25970c55514e1c4ad49858ef2",
+      "sha256": "527e26d5580875fbd8924fa6c9dd43b5994c23c25970c55514e1c4ad49858ef2"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Extending Jovovic's generating-function formulas of 25 September 2003 and Barry's array-sum identity (2009, Section 13.2, pp. 283–284), we prove Mathar's recurrence conjectures in the Formula fields of OEIS A081124, revision 8 (24 November 2012), and A084261, revision 9 (30 November 2012), retained in revisions 20 and 29, respectively. A common finite-sum argument proves both recurrences for every n ≥ 3. For the fixed-point polynomials of Fang, Hamaker and Troyka, we also give a parameter-dependent recurrence and self-contained proofs of the continued fractions and Hankel determinants recorded by Hanna and Barry. Further consequences include partial sums and linked factorial-ratio identities.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 102955,
+      "sha256": "d326e790fdb3cc001df2342767c5ac15cb571e8a7a6d1c1102b032c0bc753fb6",
+      "url": "/api/v1/collected-papers/mathar-2012-a081124-recurrence/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T15:51:11.701461864Z",
+    "record": "mathar-2012-a081124-recurrence",
+    "repository_name": "mathar-2012-a081124-recurrence",
+    "source": {
+      "bytes": 23242,
+      "sha256": "527e26d5580875fbd8924fa6c9dd43b5994c23c25970c55514e1c4ad49858ef2",
+      "url": "/api/v1/collected-papers/mathar-2012-a081124-recurrence/files/source?version=2"
+    },
+    "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T15:51:11.701461864Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "mathar-2012-a081124-recurrence"
+  }
+}

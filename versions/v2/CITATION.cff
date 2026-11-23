@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-23"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/mathar-2012-a081124-recurrence?version=2"
+license: "CC-BY-4.0"

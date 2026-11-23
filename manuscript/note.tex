@@ -1,0 +1,596 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums},pdfauthor={Haobo Ma and Wenlin Zhang}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\DeclareMathOperator{\erf}{erf}
+\title{Mathar's half-factorial recurrence conjectures:\\
+extensions of Jovovic's formulas and Barry's array sums}
+\author{Haobo Ma\\
+  \small ChronoAI Pte Ltd, Singapore
+  \and Wenlin Zhang\\
+  \small National University of Singapore\\
+  \small ChronoAI Pte Ltd, Singapore}
+\date{15 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Extending Jovovic's generating-function formulas of 25 September 2003
+and Barry's array-sum identity (2009, Section~13.2, pp.~283--284),
+we prove Mathar's recurrence conjectures in the Formula fields of
+OEIS A081124, revision~8 (24 November 2012), and A084261, revision~9
+(30 November 2012), retained in revisions~20 and~29, respectively.
+A common finite-sum argument proves both recurrences
+for every $n\geq3$. For the fixed-point polynomials of Fang, Hamaker and
+Troyka, we also give a parameter-dependent recurrence and self-contained
+proofs of the continued fractions and Hankel determinants recorded by
+Hanna and Barry. Further consequences include partial sums and linked
+factorial-ratio identities.
+\end{abstract}
+
+\section{The two recurrences}
+For $n\geq0$, put
+\[
+ a_n=\sum_{k=0}^{n}\binom nk\lfloor k/2\rfloor!,\qquad
+ c_n=\sum_{j=0}^{\lfloor n/2\rfloor}\binom n{2j}j!.
+\]
+Mathar conjectured the recurrences below in OEIS
+A081124 and its directly linked entry A084261, respectively
+\cite{oeis-a,oeis-c}. Their leading coefficients are nonzero, so each
+recurrence and its three initial values determine the entire sequence.
+Our proof treats the two sequences together, by separating the parity
+of the factorial index before taking the binomial transform.
+
+The binomial-sum descriptions already have combinatorial interpretations.
+Goyt and Pudwell's Theorem~14 identifies $a_n$ with a class of
+two-colored pattern-avoiding set partitions \cite[Section~4.5, p.~13]{gp}.
+Fang, Hamaker and Troyka obtain the sum defining $c_n$ in the example
+following their Proposition~4.13 \cite[Section~4.3, p.~16]{fht}.
+These earlier proofs identify the counting sequences and, in the second
+case, the polynomials marking fixed points. Barry's thesis already
+identifies the array sums giving $a_n$
+\cite[Section~13.2, pp.~283--284]{barry-thesis} and the $t=2$ instance
+of the continued fraction below \cite[Example~64, pp.~53--54]{barry-thesis}.
+We extend these formulas by establishing Mathar's recurrences and a
+weighted recurrence, with full proofs of the related identities.
+The generating functions in Section~\ref{sec:egf} are Jovovic's formulas;
+the continued fractions and Hankel products are likewise attributed at
+their statements.
+
+Equivalent second-order and partial-sum formulas for $a_n$ were recorded
+by Sequence Machine in 2021 \cite{sequence-machine}; both four-term
+recurrences occur in Nuspl's 2023 recurrence data \cite{nuspl}.
+These records concern formulas agreeing with sequence terms.
+The proofs below establish the identities from the defining sums.
+
+\begin{theorem}\label{thm:recurrences}
+For every integer $n\geq3$,
+\begin{align}
+ 2a_n-4a_{n-1}+(2-n)a_{n-2}+(n-1)a_{n-3}&=0,
+ \label{eq:a}\\
+ 2c_n-4c_{n-1}+(2-n)c_{n-2}+(n-2)c_{n-3}&=0.
+ \label{eq:c}
+\end{align}
+The initial values are $(a_0,a_1,a_2)=(1,2,4)$ and
+$(c_0,c_1,c_2)=(1,1,2)$.
+\end{theorem}
+
+\section{A common finite-sum proof}
+\begin{lemma}\label{lem:transfer}
+Let $q\in\mathbb Q$ and $u_0,u_1,\ldots\in\mathbb Q$ satisfy
+\begin{equation}\label{eq:input}
+ 2u_{k+3}+2u_{k+2}-(k+3)u_{k+1}-(k+q)u_k=0
+ \qquad(k\geq0).
+\end{equation}
+Then $v_n=\sum_{k=0}^{n}\binom nk u_k$ satisfies
+\begin{equation}\label{eq:transfer}
+ 2v_{n+3}-4v_{n+2}-(n+1)v_{n+1}+(n+3-q)v_n=0
+ \qquad(n\geq0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Define $U_r(n)=\sum_{k=0}^{n}\binom nk u_{k+r}$ for $r\geq0$.
+Pascal's identity, with out-of-range binomial coefficients set to zero,
+gives
+\[
+ U_r(n+1)=U_r(n)+U_{r+1}(n).
+\]
+Consequently, for fixed $n$, writing $v_{n+j}$ without its argument,
+\begin{align*}
+ U_0(n)&=v_n, & U_1(n)&=v_{n+1}-v_n,\\
+ U_2(n)&=v_{n+2}-2v_{n+1}+v_n,&
+ U_3(n)&=v_{n+3}-3v_{n+2}+3v_{n+1}-v_n.
+\end{align*}
+The weighted terms in \eqref{eq:input} obey
+\begin{equation}\label{eq:weighted}
+ \sum_{k=0}^{n}\binom nk k(u_{k+1}+u_k)=nU_1(n).
+\end{equation}
+Indeed, $(n-k)\binom nk=(k+1)\binom n{k+1}$, whence
+\begin{align*}
+ nU_1(n)-\sum_{k=0}^{n}\binom nk k u_{k+1}
+ &=\sum_{k=0}^{n}\binom n{k+1}(k+1)u_{k+1}\\
+ &=\sum_{k=0}^{n}\binom nk k u_k.
+\end{align*}
+The last reindexing adds the zero term at $k=0$ and removes the zero
+term with binomial coefficient $\binom n{n+1}$; it also applies when
+$n=0$. Multiply \eqref{eq:input} by $\binom nk$ and sum. By
+\eqref{eq:weighted}, the resulting identity is
+\[
+ 2U_3(n)+2U_2(n)-3U_1(n)-qU_0(n)=nU_1(n).
+\]
+Substitution of the four displayed expressions for $U_r(n)$ gives
+\eqref{eq:transfer}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:recurrences}]
+For the first sequence take $u_{2m}=u_{2m+1}=m!$ and $q=1$.
+For $k=2m$ the left-hand side of \eqref{eq:input} is
+\[
+ 4(m+1)!-(4m+4)m!=0.
+\]
+For $k=2m+1$ it is
+\[
+ 2(m+2)!-(2m+2)(m+1)!-(2m+2)m!
+ =2(m+1)!-(2m+2)m!=0.
+\]
+Applying Lemma~\ref{lem:transfer} with $q=1$ at index $n-3$ gives
+\eqref{eq:a} for every $n\geq3$.
+
+For the second sequence take $u_{2m}=m!$, $u_{2m+1}=0$, and $q=2$.
+The two parity cases of \eqref{eq:input} reduce to
+\[
+ 2(m+1)!-(2m+2)m!=0,\qquad
+ 2(m+2)!-(2m+4)(m+1)!=0,
+\]
+respectively. Applying Lemma~\ref{lem:transfer} with $q=2$ at index
+$n-3$ gives \eqref{eq:c} for every $n\geq3$.
+Direct evaluation at $n=0,1,2$ gives the stated initial values.
+\end{proof}
+
+\section{Generating functions and partial sums}
+\label{sec:egf}
+\begin{corollary}\label{cor:egf}
+Let $H(x)=\sqrt\pi\,e^{x^2/4}\erf(x/2)$, where
+$\erf(z)=\frac{2}{\sqrt\pi}\int_0^z e^{-t^2}\,dt$.
+The exponential generating functions are
+\begin{align}
+ A(x):=\sum_{n\geq0}a_n\frac{x^n}{n!}
+ &=e^x\bigl(1+(1+x/2)H(x)\bigr),\label{eq:egfa}\\
+ C(x):=\sum_{n\geq0}c_n\frac{x^n}{n!}
+ &=e^x\bigl(1+(x/2)H(x)\bigr).\label{eq:egfc}
+\end{align}
+They are the formulas recorded by Jovovic on 25 September 2003
+in A081124 and A084261. Moreover, for every $n\geq0$,
+\begin{equation}\label{eq:relation}
+ c_{n+1}=a_{n+1}-a_n,\qquad a_n=\sum_{j=0}^{n}c_j.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Consider the odd entire series
+$H_0(x)=\sum_{m\geq0}m!x^{2m+1}/(2m+1)!$.
+The ratio of successive nonzero terms tends to zero for every fixed
+$x$, so termwise differentiation is valid. Since
+$m!/(2m)!=(m-1)!/(2(2m-1)!)$ for $m\geq1$, we have
+\[
+ \sum_{m\geq0}\frac{m!x^{2m}}{(2m)!}=1+\frac x2H_0(x),
+ \qquad H_0'(x)=1+\frac x2H_0(x),\quad H_0(0)=0.
+\]
+Multiplication by $e^{-x^2/4}$ and integration from $0$ to $x$
+give $H_0(x)=e^{x^2/4}\int_0^x e^{-t^2/4}\,dt=H(x)$.
+For any sequence $u$, multiplication of its exponential generating
+function by $e^x$ takes its coefficient $u_k$ to
+$\sum_{k=0}^{n}\binom nk u_k$, as follows by taking the coefficient
+of $x^n/n!$ in the Cauchy product. Applying this to the even series
+$1+xH(x)/2$ and to its sum with $H(x)$ proves
+\eqref{eq:egfa}--\eqref{eq:egfc}.
+
+Put $D=A-C=e^xH$. Using $H'=1+xH/2$ gives
+\[
+ D'=e^x\bigl(H+H'\bigr)
+    =e^x\bigl(1+(1+x/2)H\bigr)=A.
+\]
+Taking coefficients of $x^n/n!$ gives $a_{n+1}-c_{n+1}=a_n$.
+Since $a_0=c_0=1$, summation gives the second identity in
+\eqref{eq:relation}.
+\end{proof}
+
+\begin{corollary}\label{cor:shorter}
+For every $n\geq2$,
+\begin{equation}\label{eq:shorter}
+ c_n=1+\frac n2a_{n-2},\qquad
+ a_n=1+a_{n-1}+\frac n2a_{n-2}.
+\end{equation}
+Let $B(i,j)=\sum_{k\geq0}\binom ik\binom jk k!$ for integers $i,j\geq0$,
+where out-of-range binomial coefficients vanish. Then
+\begin{equation}\label{eq:somos}
+ a_n=\sum_{i+j=n}B(i,j)\qquad(n\geq0).
+\end{equation}
+This is Somos's symmetric array A088699 \cite{somos}; its antidiagonal
+sum identity was also established by Barry
+\cite[Section~13.2, pp.~283--284]{barry-thesis}.
+\end{corollary}
+\begin{proof}
+The identity $D'=A$, $D(0)=0$ from Corollary~\ref{cor:egf} and
+$C=e^x+xD/2$ give $c_n=1+(n/2)a_{n-2}$ for $n\geq2$.
+Using $c_n=a_n-a_{n-1}$ gives the second equality.
+It is the second-order formula recorded by Sequence Machine on
+9 December 2021; the partial-sum formula \eqref{eq:relation} is recorded
+there on 1 November 2021 \cite{sequence-machine}.
+For the array, Vandermonde's identity in its summed form gives
+\[
+ \sum_{i+j=n}B(i,j)
+ =\sum_{k\geq0}k!\binom{n+1}{2k+1}
+ =\sum_{j=0}^nc_j=a_n.
+\]
+The first equality uses
+$\sum_{i=0}^n\binom ik\binom{n-i}k=\binom{n+1}{2k+1}$:
+count a $(2k+1)$-element subset by its middle element $i+1$.
+The second equality uses
+$\sum_{j=2k}^n\binom j{2k}=\binom{n+1}{2k+1}$.
+
+There is also a direct array explanation of the shorter recurrence.
+$B(i,j)$ counts partial matchings between sets of sizes $i$ and $j$.
+An element of the first set is either unmatched or paired to one of
+the $j$ elements of the second set, so
+$B(i,j)=B(i-1,j)+jB(i-1,j-1)$ for $i>0$, with $B(0,j)=1$.
+Summing on $i+j=n$ leaves the boundary term $1$ and the previous
+antidiagonal sum. The remaining term is
+$\sum_{h+k=n-2}(k+1)B(h,k)$. Since $B(h,k)=B(k,h)$, it equals
+$(n/2)\sum_{h+k=n-2}B(h,k)=(n/2)a_{n-2}$.
+This also proves the second equality of \eqref{eq:shorter}.
+Subtracting its instances at $n$ and $n-1$ recovers \eqref{eq:a}.
+\end{proof}
+
+\section{Weighted transforms, continued fractions and Hankel determinants}
+For an indeterminate $t$, define
+\[
+ c_n(t)=\sum_{j=0}^{\lfloor n/2\rfloor}\binom n{2j}j!t^{n-2j},\qquad
+ a_n(t)=\sum_{k=0}^{n}\binom nk\lfloor k/2\rfloor!t^{n-k}.
+\]
+Thus $c_n(1)=c_n$ and $a_n(1)=a_n$.
+Fang, Hamaker and Troyka's fixed-point enumerator specializes to
+$c_n(t)$ \cite[Proposition~4.13 and its following example]{fht}.
+Its coefficient of $t^k$ is the triangle A161556:
+\[
+ T(n,k)=
+ \begin{cases}\binom nk((n-k)/2)!,&0\leq k\leq n,\ n-k\text{ even},\\
+ 0,&\text{otherwise}.
+ \end{cases}
+\]
+In particular, the row sums are $c_n$, as recorded by Barry
+\cite{oeis-triangle}.
+
+\begin{corollary}\label{cor:weighted}
+For $n\geq3$,
+\begin{equation}\label{eq:weighted-recurrence}
+ 2c_n(t)-4t c_{n-1}(t)+(2t^2-n)c_{n-2}(t)
+       +(n-2)t c_{n-3}(t)=0,
+\end{equation}
+with $c_0(t)=1$, $c_1(t)=t$, $c_2(t)=t^2+1$. Also, for $n\geq0$,
+\begin{equation}\label{eq:weighted-sum}
+ a_n(t)=c_n(t)+\sum_{j=0}^{n-1}t^{n-1-j}c_j(t),
+\end{equation}
+where an empty sum is zero.
+\end{corollary}
+\begin{proof}
+Put $E(x)=1+xH(x)/2$. The identity $H'=1+xH/2$ gives
+$2E''-xE'-2E=0$. Since
+$C_t(x):=\sum c_n(t)x^n/n!=e^{tx}E(x)$, it follows that
+\[
+ 2C_t''-(x+4t)C_t'+(tx+2t^2-2)C_t=0.
+\]
+Comparing coefficients of $x^{n-2}/(n-2)!$ gives
+\eqref{eq:weighted-recurrence}; the initial values follow from the sum.
+Likewise $A_t-C_t=e^{tx}H$, where $A_t=\sum a_n(t)x^n/n!$.
+Writing $D_t=A_t-C_t$ gives $D_t'=tD_t+C_t$ and $D_t(0)=0$.
+The coefficient recurrence $d_{n+1}=td_n+c_n(t)$, with
+$D_t=\sum d_nx^n/n!$, yields \eqref{eq:weighted-sum}.
+The formula for $T(n,k)$ follows by setting $k=n-2j$ in $c_n(t)$.
+\end{proof}
+
+For a sequence $s_0,s_1,\ldots$, its Hankel determinant at index $n$ is
+$\det(s_{i+j})_{0\leq i,j\leq n}$.
+The following identities include Hanna's 17 January 2006 continued
+fraction in A084261, Barry's continued fraction for A161556, and the
+Hankel product A137704 \cite{oeis-c,oeis-triangle,oeis-hankel}.
+All ordinary generating functions here are formal power series;
+analytic convergence is not needed.
+
+\begin{corollary}\label{cor:hankel}
+Set $\lambda_j=\lfloor(j+1)/2\rfloor$ for $j\geq1$. Then
+\begin{equation}\label{eq:jacobi}
+ \sum_{n\geq0}c_n(t)z^n
+ =\cfrac{1}{1-tz-\cfrac{\lambda_1z^2}{1-tz-
+       \cfrac{\lambda_2z^2}{1-tz-\cfrac{\lambda_3z^2}{\ddots}}}},
+\end{equation}
+where $(\lambda_1,\lambda_2,\lambda_3,\ldots)=(1,1,2,2,3,3,\ldots)$.
+For $n\geq0$ the Hankel determinants are independent of $t$ and equal
+\begin{equation}\label{eq:hankel}
+ \det(c_{i+j}(t))_{0\leq i,j\leq n}
+ =\prod_{k=0}^{n}\left\lfloor\frac{k+2}{2}\right\rfloor^{n-k}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Let $u_{2m}=m!$, $u_{2m+1}=0$. The lower triangular matrix
+$P_t=(\binom ir t^{i-r})_{0\leq i,r\leq n}$, with entries zero for $r>i$,
+has determinant one. Vandermonde's identity gives
+\[
+ (c_{i+j}(t))_{i,j}=P_t(u_{i+j})_{i,j}P_t^{\mathsf T}.
+\]
+Indeed, the coefficient of $u_k t^{i+j-k}$ on the right is
+$\sum_{r+s=k}\binom ir\binom js=\binom{i+j}k$.
+Thus the two Hankel determinants agree. Reordering the even and odd
+indices gives diagonal blocks $(i+j)!$ of size
+$r=\lceil(n+1)/2\rceil$ and $(i+j+1)!$ of size
+$s=\lfloor(n+1)/2\rfloor$. For $\alpha=0,1$,
+\[
+ \det((i+j+\alpha)!)_{0\leq i,j<m}
+ =\prod_{j=0}^{m-1}j!(j+\alpha)!.
+\]
+To see this, factor $(i+\alpha)!$ from row $i$; the remaining column $j$
+is the monic degree-$j$ polynomial
+$(i+\alpha+1)\cdots(i+\alpha+j)$ evaluated at $i$.
+Its determinant is the Vandermonde product
+$\prod_{0\leq i<k<m}(k-i)=\prod_{j=0}^{m-1}j!$.
+Empty products are one. Hence the Hankel determinant is
+\[
+ \Delta_n=\prod_{j=0}^{r-1}(j!)^2\prod_{j=0}^{s-1}j!(j+1)!.
+\]
+With $\Delta_{-1}=1$, its successive quotients are
+$\Delta_{2m}/\Delta_{2m-1}=(m!)^2$ and
+$\Delta_{2m+1}/\Delta_{2m}=m!(m+1)!$. Equivalently,
+$\Delta_n\Delta_{n-2}/\Delta_{n-1}^2=\lfloor(n+1)/2\rfloor$
+for $n\geq1$. Together with $\Delta_0=1$ this proves \eqref{eq:hankel}.
+
+The same determinants give the continued fraction. The positive functional
+\[
+ L(f)=\int_{-\infty}^{\infty}f(y)|y|e^{-y^2}\,dy
+\]
+satisfies $L(y^{2m})=m!$ and $L(y^{2m+1})=0$; substitute $v=y^2$
+and integrate by parts $m$ times for the first equality.
+Since $L(p^2)>0$ for every nonzero real polynomial $p$,
+Gram--Schmidt gives monic orthogonal polynomials $p_j$, with $p_0=1$.
+Writing $h_j=L(p_j^2)$, triangular change of basis in the Gram matrix
+gives $h_j=\Delta_j/\Delta_{j-1}$. Symmetry gives
+$p_j(-y)=(-1)^jp_j(y)$. Moving multiplication by $y$ across the inner
+product shows that all coefficients below $p_{j-1}$ and the coefficient
+of $p_j$ in $yp_j$ vanish. The coefficient of $p_{j-1}$ is
+$h_j/h_{j-1}=\lambda_j$. Thus
+\[
+ yp_0=p_1,\qquad yp_j=p_{j+1}+\lambda_jp_{j-1}\quad(j\geq1).
+\]
+For real $t$, $L((y+t)^n)=c_n(t)$. Expanding multiplication by $y+t$
+in this basis expresses this moment as the total weight of paths from
+height zero back to zero, staying nonnegative, with upward, level and
+downward steps of respective weights $1$, $t$ and $\lambda_j$ (a down
+step starts at height $j$). If $G_j(z)$ counts such paths above height
+$j$, first-return decomposition gives
+\[
+ G_j=\frac{1}{1-tz-\lambda_{j+1}z^2G_{j+1}}.
+\]
+This proves \eqref{eq:jacobi}. Every coefficient involves finitely many
+heights; polynomial dependence on $t$ extends the identities from real
+$t$ to the indeterminate $t$.
+\end{proof}
+
+\section{Elementary identities in the linked entries}
+The sequence $b_n=\lfloor n/2\rfloor!$ is A081123; its index
+$\lfloor n/2\rfloor$ is A004526 \cite{oeis-b}. For $n\geq2$, the
+two-part partitions of $n$ are $(j,n-j)$ with $1\leq j\leq\lfloor n/2\rfloor$.
+Their smaller parts have product $b_n$, proving Hurt's comment in
+A081123 (25 January 2013).
+
+\begin{corollary}\label{cor:ratio}
+Let $r_n=n!/\lfloor n/2\rfloor!$ (A081125). Its exponential generating
+function is $(1+x)e^{x^2}$, as recorded by Jovovic on 24 September 2003.
+Mathar's recorded recurrence of 26 November 2012 is valid for $n\geq3$:
+\begin{equation}\label{eq:ratio}
+ r_n+2r_{n-1}-2nr_{n-2}+4(2-n)r_{n-3}=0.
+\end{equation}
+For $n\geq1$, $r_n$ is the product of the larger parts in the two-part
+partitions of $n+1$. Write
+$\Gamma(z)=\int_0^\infty v^{z-1}e^{-v}\,dv$ for real $z>0$.
+Its factorial, product, gamma and swinging-factorial forms are
+\begin{align}
+ r_n&=\prod_{i=\lfloor n/2\rfloor+1}^{n}i
+ =\frac{2^n\Gamma((n+1+(n\bmod2))/2)}{\sqrt\pi},\label{eq:ratio-product}\\
+ r_n&=b_n s_n=\sqrt{n!s_n},\qquad
+ s_n:=\frac{n!}{(\lfloor n/2\rfloor!)^2}.\label{eq:swing}
+\end{align}
+Here $s_n$ is the swinging factorial A056040.
+Eldar's two reciprocal sums of 10 March 2022 are
+\begin{equation}\label{eq:reciprocal}
+ \sum_{n\geq0}\frac1{r_n}=1+\frac32 H(1),\qquad
+ \sum_{n\geq0}\frac{(-1)^n}{r_n}=1-\frac12 H(1).
+\end{equation}
+\end{corollary}
+\begin{proof}
+The even and odd terms give
+$\sum r_nx^n/n!=\sum_{m\geq0}(x^{2m}+x^{2m+1})/m!=(1+x)e^{x^2}$.
+The relations $r_{2m}=2r_{2m-1}$ for $m\geq1$ and
+$r_{2m+1}=(2m+1)r_{2m}$ for $m\geq0$ prove \eqref{eq:ratio}:
+for even $n$ its left side is
+$2(n-2)(r_{n-2}-2r_{n-3})$; for odd $n$ it is
+$4(r_{n-2}-(n-2)r_{n-3})$.
+The larger-part product is
+$n(n-1)\cdots(n+1-\lfloor(n+1)/2\rfloor)=r_n$.
+The first equality of \eqref{eq:ratio-product} is factorial cancellation;
+the gamma equality follows in each parity from
+$\Gamma(m+1/2)=(2m)!\sqrt\pi/(4^mm!)$.
+This half-integer formula follows by integration by parts from
+$\Gamma(1/2)=\sqrt\pi$ (the Gaussian integral).
+Equation~\eqref{eq:swing} follows from the definition of $s_n$ and $r_n>0$.
+The same factorial quotient counts ordered selections of
+$\lceil n/2\rceil$ distinct objects from $n$ objects.
+Finally, $1/r_n=b_n/n!$, whose entire generating series is
+$1+(1+x/2)H(x)$. Substitution of $x=1,-1$ proves
+\eqref{eq:reciprocal}, including absolute convergence.
+These are the formulas and comments of A081125 \cite{oeis-ratio}.
+\end{proof}
+
+One recorded interval product needs an endpoint correction. In A081125,
+revision~86, the Formula block signed W.~I.~Hurt, 6 June 2013, contains
+$r_n=\prod_{i=\lceil n/2\rceil}^{n-1}i$. At $n=2$ that product is $1$,
+whereas $r_2=2$. The corrected interval is
+\eqref{eq:ratio-product}. The other factorial and ordered-selection
+forms in that block agree with $r_n$.
+The SageMath expression in the Program field has the same endpoints.
+In rising-factorial notation $x^{\overline\ell}:=\prod_{j=0}^{\ell-1}(x+j)$,
+its corrected form is
+$(\lfloor n/2\rfloor+1)^{\overline{\lceil n/2\rceil}}$.
+
+\section{Coverage and verification}
+The two signed source lines say ``Conjecture:''; their dates are
+24 November 2012 (A081124) and 30 November 2012 (A084261).
+The source versions are A081124 revision~20 (5 November 2025),
+A084261 revision~29 (7 September 2020), A081123 revision~62,
+and A081125 revision~86. The table distinguishes these conjectures,
+previously recorded formulas and additional consequences.
+The original posing edits are revisions~8 and~9, respectively;
+revisions~9 and~10 approved them on the same dates.
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.39\linewidth}>{\raggedright\arraybackslash}p{0.54\linewidth}@{}}
+\toprule
+Source statement & Coverage\\
+\midrule
+\endhead
+A081124, Mathar, 24 Nov. 2012 & Proved: \eqref{eq:a}.\\
+A084261, Mathar, 30 Nov. 2012 & Proved: \eqref{eq:c}.\\
+A081123, A081124, A084261, Jovovic, 25 Sept. 2003 & Proved: the recorded even/odd series and
+\eqref{eq:egfa}--\eqref{eq:egfc}.\\
+A081124 counting interpretation & Prior proof cited: Goyt--Pudwell (2012), Theorem~14.\\
+A081124, Sequence Machine (2021) & Proved: the recorded partial sums and shorter recurrence, \eqref{eq:relation} and \eqref{eq:shorter}.\\
+A088699, Somos; Barry's thesis & Reproved; prior proof Barry (2009), Section~13.2: array sums \eqref{eq:somos}.\\
+A081124/A084261, Nuspl (2023) data & The recorded four-term formulas have all-index proofs in Theorem~\ref{thm:recurrences}.\\
+A084261 weighted counting interpretation & Prior proof cited: Fang--Hamaker--Troyka (2020/2022), Proposition~4.13.\\
+A161556 row sums and row polynomials & Reproved; prior proof Fang--Hamaker--Troyka (2020/2022): $c_n(t)=\sum_kT(n,k)t^k$.\\
+A084261, Hanna; A161556, Barry & Proved: the recorded continued fractions, \eqref{eq:jacobi}; the $t=2$ case is reproved from Barry (2009), Example~64.\\
+A137704; A084261, Barry's comment & Proved: the recorded Hankel product, \eqref{eq:hankel}.\\
+A081123, Hurt's product comment & Proved: the recorded smaller-part product.\\
+A081125, Jovovic, Mathar, Luschny, Hurt, Eldar & Proved: the EGF, recurrence \eqref{eq:ratio}, gamma/swinging forms, larger-part product and sums \eqref{eq:reciprocal}.\\
+A081125, Hurt's interval product and SageMath expression & Refuted-and-corrected: $n=2$ gives $1\ne2$; replacement \eqref{eq:ratio-product}.\\
+Weighted recurrence \eqref{eq:weighted-recurrence} and partial sums \eqref{eq:weighted-sum} & Not posed in these entries; proved.\\
+A004526, floor definition & Used; other interpretations not covered.\\
+A081124, A084261, A137704 asymptotics & Not covered.\\
+A081123 and A081125 continued fractions & Not covered.\\
+\bottomrule
+\end{longtable}
+\normalsize
+The relation \eqref{eq:relation} is the $t=1$ case of
+\eqref{eq:weighted-sum}; neither is a conjecture asserted in these entries.
+
+The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean}{\texttt{MatharA081124.lean}}
+defines the same inclusive binomial sum $a_n$. Its declaration
+\nolinkurl{D5.S1.Recurrence.MatharA081124.result} has exactly statement
+\eqref{eq:a} for all natural $n\geq3$, interpreted in the integers.
+The pinned file
+\href{https://github.com/the-omega-institute/trureturing/blob/50af3c7111e85c1112ee9dbc6e721adbb759a26b/D5/S1/Recurrence/MatharA084261.lean}{\texttt{MatharA084261.lean}}
+defines $c_n$ by its inclusive even-index binomial sum. Its declaration
+\nolinkurl{D5.S1.Recurrence.MatharA084261.result} has exactly statement
+\eqref{eq:c} for all natural $n\geq3$, in the integers.
+The general transfer lemma, generating functions, weighted recurrence,
+array identities, continued fractions, determinants and factorial-ratio
+identities have the written proofs above.
+The accompanying \texttt{verify.py} checks the initial values and
+recurrence-generated terms against their defining sums, the parity
+identities, the generating-function coefficients and \eqref{eq:relation}
+using exact arithmetic. The accompanying \texttt{verify-siblings.py}
+checks the weighted formulas, continued-fraction coefficients, determinant
+products and factorial-ratio identities over finite ranges specified in
+the README and checker outputs. The written proofs above establish these
+identities for all their stated indices; the two pinned Lean declarations
+cover \eqref{eq:a} and \eqref{eq:c}, respectively.
+
+\begin{thebibliography}{12}
+\raggedright
+\bibitem{oeis-a}
+OEIS Foundation Inc., \emph{A081124: Binomial transform of
+$\lfloor n/2\rfloor!$}, revision 20.
+R.~J.~Mathar's Formula entry, 24 November 2012, originally revision~8;
+V.~Jovovic's generating function, 25 September 2003.
+\url{https://oeis.org/A081124}.
+
+\bibitem{oeis-c}
+OEIS Foundation Inc., \emph{A084261: A binomial transform of factorial
+numbers}, revision 29.
+R.~J.~Mathar's Formula entry, 30 November 2012, originally revision~9;
+V.~Jovovic's generating function, 25 September 2003.
+\url{https://oeis.org/A084261}.
+
+\bibitem{oeis-b}
+OEIS Foundation Inc., \emph{A081123: $a(n)=\lfloor n/2\rfloor!$},
+revision 62; and \emph{A004526: Nonnegative integers repeated},
+revision 447. \url{https://oeis.org/A081123};
+\url{https://oeis.org/A004526}.
+
+\bibitem{gp}
+A.~M.~Goyt and L.~K.~Pudwell,
+\emph{Avoiding colored partitions of two elements in the pattern sense},
+Journal of Integer Sequences \textbf{15} (2012), Article 12.6.2,
+Theorem~14, pp.~13--14.
+\url{https://cs.uwaterloo.ca/journals/JIS/VOL15/Goyt/goyt4.pdf}.
+Also arXiv:1203.3786v3, 13 June 2012.
+\url{https://arxiv.org/abs/1203.3786v3}.
+
+\bibitem{fht}
+J.~J.~Fang, Z.~Hamaker and J.~M.~Troyka,
+\emph{On pattern avoidance in matchings and involutions},
+Electronic Journal of Combinatorics \textbf{29}(1) (2022), P1.39.
+\url{https://doi.org/10.37236/10155}.
+Version used for the locator: arXiv:2009.00079v3, 12 January 2022.
+\url{https://arxiv.org/abs/2009.00079v3}.
+
+\bibitem{oeis-triangle}
+OEIS Foundation Inc., \emph{A161556}, Paul Barry, 13 June 2009:
+triangle formula, row sums and bivariate continued fraction.
+\url{https://oeis.org/A161556}.
+
+\bibitem{oeis-hankel}
+OEIS Foundation Inc., \emph{A137704}, Paul Barry, 7 February 2008:
+Hankel product formula and comments.
+\url{https://oeis.org/A137704}.
+
+\bibitem{oeis-ratio}
+OEIS Foundation Inc., \emph{A081125: $n!/\lfloor n/2\rfloor!$}, revision~86.
+V.~Jovovic, 24 September 2003; R.~J.~Mathar, 26 November 2012;
+P.~Luschny, 7 August 2009 and 28 October 2013;
+W.~I.~Hurt, 26 January and 6 June 2013; A.~Eldar, 10 March 2022.
+\url{https://oeis.org/A081125}.
+Swinging-factorial convention: \url{https://oeis.org/A056040}.
+
+\bibitem{sequence-machine}
+Sequence Machine, \emph{A081124}, formula records dated
+1 November 2021 (partial sums) and 9 December 2021 (second-order recurrence).
+\url{https://sequencedb.net/s/A081124}.
+
+\bibitem{nuspl}
+P.~Nuspl, \emph{Guessing recurrence sequences in the OEIS}, polynomial
+recurrence data, \texttt{ens15.csv} (download links added 7 July 2023),
+rows A081124 and A084261.
+\url{https://www3.risc.jku.at/people/pnuspl/CSV_OEIS/dfin/ens15.csv}.
+
+\bibitem{somos}
+OEIS Foundation Inc., \emph{A088699}, Michael Somos, 8 October 2003:
+symmetric array, recurrence and antidiagonal sums.
+\url{https://oeis.org/A088699}.
+
+\bibitem{barry-thesis}
+P.~Barry, \emph{A Study of Integer Sequences, Riordan Arrays,
+Pascal-like Arrays and Hankel Transforms}, Ph.D. thesis,
+University College Cork, July 2009.
+Section~13.2, pp.~283--284; Example~64, pp.~53--54.
+\url{https://research.setu.ie/en/publications/a-study-of-integer-sequencesriordan-arrays-pascal-like-arraysand--4/}.
+Author-posted text:
+\url{https://www.academia.edu/106522067/}.
+\end{thebibliography}
+
+\bigskip
+\noindent\small\textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative
+Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}

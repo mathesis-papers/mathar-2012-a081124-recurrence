@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "note_id": "mathar-2012-a081124-recurrence",
+  "note_revision": 2,
+  "scope": "All-index written proofs, two pinned Lean declarations and finite exact-arithmetic checks have the distinct scopes below.",
+  "claims": [
+    {
+      "problem_id": "mathar-2012-a081124-recurrence",
+      "source_url": "https://oeis.org/A081124/internal",
+      "posing_locator": "Mathar, Formula, 24 November 2012; posing revision 8; approved revision 9; retained revision 20",
+      "source_quote": "Conjecture: 2*a(n) -4*a(n-1) +(-n+2)*a(n-2) +(n-1)*a(n-3)=0.",
+      "statement": "For a_n=sum(k=0..n,binomial(n,k)*floor(k/2)!), 2*a_n-4*a_(n-1)+(2-n)*a_(n-2)+(n-1)*a_(n-3)=0 for all n>=3.",
+      "source_status": "Conjecture", "coverage": "Proved",
+      "written_proof": "Theorem 1 and Lemma 1; eq:a, eq:transfer",
+      "lean_file": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean",
+      "lean_declaration": "D5.S1.Recurrence.MatharA081124.result",
+      "lean_scope": "Exactly this integer recurrence for the inclusive natural-number sum, for all natural n>=3.",
+      "finite_check": "verify.py: sums and recurrence-generated terms, 0<=n<=256."
+    },
+    {
+      "problem_id": "mathar-2012-a084261-recurrence",
+      "source_url": "https://oeis.org/A084261/internal",
+      "posing_locator": "Mathar, Formula, 30 November 2012; posing revision 9; approved revision 10; retained revision 29",
+      "source_quote": "Conjecture: 2*a(n) -4*a(n-1) +(-n+2)*a(n-2) +(n-2)*a(n-3)=0.",
+      "statement": "For c_n=sum(j=0..floor(n/2),binomial(n,2*j)*j!), 2*c_n-4*c_(n-1)+(2-n)*c_(n-2)+(n-2)*c_(n-3)=0 for all n>=3.",
+      "source_status": "Conjecture", "coverage": "Proved",
+      "written_proof": "Theorem 1 and Lemma 1; eq:c, eq:transfer",
+      "lean_file": "https://github.com/the-omega-institute/trureturing/blob/50af3c7111e85c1112ee9dbc6e721adbb759a26b/D5/S1/Recurrence/MatharA084261.lean",
+      "lean_declaration": "D5.S1.Recurrence.MatharA084261.result",
+      "lean_scope": "Exactly this integer recurrence for the inclusive even-index natural-number sum, for all natural n>=3.",
+      "finite_check": "verify.py: sums and recurrence-generated terms, 0<=n<=256."
+    },
+    {
+      "source_url": "https://oeis.org/A081123/internal",
+      "locator": "Revision 62, Formula, Jovovic, 25 September 2003; also A081124 revision 20 and A084261 revision 29",
+      "statement": "With H(x)=sqrt(pi)*exp(x^2/4)*erf(x/2), the EGFs are A=exp(x)*(1+(1+x/2)*H) and C=exp(x)*(1+x*H/2).",
+      "source_status": "Recorded formulas", "coverage": "Proved",
+      "written_proof": "Corollary 1; eq:egfa, eq:egfc",
+      "finite_check": "verify.py: exact rational coefficients through degree 64."
+    },
+    {
+      "source_url": "https://cs.uwaterloo.ca/journals/JIS/VOL15/Goyt/goyt4.pdf",
+      "locator": "Goyt–Pudwell (2012), Section 4.5, Theorem 14, pp. 13–14",
+      "statement": "a_n counts the specified two-colored pattern-avoiding set partitions.",
+      "coverage": "Prior proof cited", "written_proof": "Section 1 cites the established interpretation."
+    },
+    {
+      "source_url": "https://sequencedb.net/s/A081124",
+      "locator": "Formula records dated 1 November 2021 and 9 December 2021",
+      "statement": "a_n=sum(j=0..n,c_j); c_n=1+(n/2)*a_(n-2) and a_n=1+a_(n-1)+(n/2)*a_(n-2), n>=2.",
+      "source_status": "Recorded partial sums and shorter recurrence; the c_n form is a consequence",
+      "coverage": "Proved", "written_proof": "Corollaries 1–2; eq:relation, eq:shorter",
+      "finite_check": "verify.py: partial sums through 64; verify-siblings.py: shorter recurrences through 128."
+    },
+    {
+      "source_url": "https://research.setu.ie/en/publications/a-study-of-integer-sequencesriordan-arrays-pascal-like-arraysand--4/",
+      "full_text_url": "https://www.academia.edu/106522067/",
+      "locator": "Barry (July 2009), Section 13.2, pp. 283–284; Somos's A088699, Formula and cross-reference fields",
+      "statement": "For B(i,j)=sum(k>=0,binomial(i,k)*binomial(j,k)*k!), a_n=sum(i+j=n,B(i,j)).",
+      "source_status": "Established array identity", "coverage": "Reproved; prior proof Barry (2009)",
+      "written_proof": "Corollary 2; eq:somos, Vandermonde and array-recurrence arguments",
+      "finite_check": "verify-siblings.py: both coordinates through 48, antidiagonals through 48."
+    },
+    {
+      "source_url": "https://www3.risc.jku.at/people/pnuspl/CSV_OEIS/dfin/ens15.csv",
+      "locator": "Nuspl (2023), lines 18573 and 19161 including header; download links added 7 July 2023",
+      "statement": "The recorded shift operators give Mathar's two four-term recurrences after shifting by three.",
+      "source_status": "Guessed operator records", "coverage": "Recorded formulas proved by Theorem 1",
+      "written_proof": "Theorem 1; a guessed-operator record is distinguished from a proof."
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2009.00079v3",
+      "locator": "Fang–Hamaker–Troyka (2020/2022), Proposition 4.13 and example, Section 4.3, pp. 15–16; A161556 revision 17, Formula",
+      "statement": "The fixed-point polynomial is c_n(t)=sum(j,binomial(n,2*j)*j!*t^(n-2*j)), whose coefficients give A161556.",
+      "coverage": "Reproved; prior proof Fang–Hamaker–Troyka (2020/2022)",
+      "written_proof": "Section 4, coefficient formula and Corollary 3",
+      "finite_check": "verify-siblings.py: row polynomials through 64 at six rational parameter values."
+    },
+    {
+      "source_url": "https://oeis.org/A161556/internal",
+      "locator": "Consequences of the recorded row polynomials",
+      "statement": "2*c_n(t)-4*t*c_(n-1)(t)+(2*t^2-n)*c_(n-2)(t)+(n-2)*t*c_(n-3)(t)=0, n>=3; a_n(t)=c_n(t)+sum(j=0..n-1,t^(n-1-j)*c_j(t)).",
+      "source_status": "Not posed in the source", "coverage": "Not posed; proved",
+      "written_proof": "Corollary 3; eq:weighted-recurrence, eq:weighted-sum; polynomial identities in t",
+      "finite_check": "verify-siblings.py: n through 64 at t=-2,-1,0,1/2,1,2."
+    },
+    {
+      "source_url": "https://oeis.org/A084261/internal",
+      "locator": "Hanna, Formula, 17 January 2006; Barry, A161556; Barry thesis, Example 64, pp. 53–54 (t=2)",
+      "statement": "The formal ordinary generating function of c_n(t) is the Jacobi fraction with diagonal t and successive down-step weights 1,1,2,2,3,3,... .",
+      "source_status": "Recorded formulas and a proved special case", "coverage": "Proved; t=2 reproved from Barry (2009)",
+      "written_proof": "Corollary 4; eq:jacobi, positive moments and first-return decomposition",
+      "finite_check": "verify-siblings.py: formal coefficients through degree 64 at six parameter values."
+    },
+    {
+      "source_url": "https://oeis.org/A137704/internal",
+      "locator": "Revision 6, Formula; Barry, 7 February 2008; A084261 Comment, 11 April 2010",
+      "statement": "det(c_(i+j)(t))_(0<=i,j<=n)=product(k=0..n,floor((k+2)/2)^(n-k)), independently of t.",
+      "source_status": "Recorded product", "coverage": "Proved",
+      "written_proof": "Corollary 4; eq:hankel, Pascal congruence and parity blocks",
+      "finite_check": "verify-siblings.py: determinant indices 0–12 at six parameter values."
+    },
+    {
+      "source_url": "https://oeis.org/A081123/internal",
+      "locator": "Revision 62, Hurt's Comment, 25 January 2013",
+      "statement": "For n>=2, the smaller-part product over two-part partitions of n is floor(n/2)!.",
+      "source_status": "Asserted interpretation", "coverage": "Proved",
+      "written_proof": "Section 5, opening paragraph", "finite_check": "verify-siblings.py: products through 512."
+    },
+    {
+      "source_url": "https://oeis.org/A081125/internal",
+      "locator": "Revision 86; Jovovic (2003), Mathar (2012), Luschny (2009/2013), Hurt (2013) and Eldar (2022), as individually dated in Section 5",
+      "statement": "For r_n=n!/floor(n/2)!, its EGF, recurrence, gamma and swinging-factorial forms, larger-part product, ordered-selection formula and reciprocal sums hold as stated.",
+      "source_status": "Recorded formulas and interpretations", "coverage": "Proved",
+      "written_proof": "Corollary 5; eq:ratio through eq:reciprocal",
+      "finite_check": "verify-siblings.py: product and recurrence identities through 512; gamma and convergent-sum identities have written analytic proofs."
+    },
+    {
+      "source_url": "https://oeis.org/A081125/internal",
+      "locator": "Revision 86, Hurt's Formula block, 6 June 2013, and SageMath Program field",
+      "source_quote": "a(n) = Product_{i = ceiling(n/2)..(n-1)} i.",
+      "statement": "The product and rising_factorial(ceil(n/2),floor(n/2)) give 1 at n=2, not r_2=2. Corrected forms are product(i=floor(n/2)+1..n,i) and rising_factorial(floor(n/2)+1,ceil(n/2)).",
+      "source_status": "Asserted formula", "coverage": "Refuted-and-corrected",
+      "written_proof": "Section 5, paragraph after Corollary 5; eq:ratio-product",
+      "finite_check": "verify-siblings.py: n=2 discrepancy and corrected products through 512."
+    },
+    {
+      "source_url": "https://oeis.org/A004526/internal", "locator": "Revision 447, floor definition",
+      "statement": "The index is floor(n/2).", "coverage": "Definition used; other interpretations not covered"
+    },
+    {
+      "source_url": "https://oeis.org/A081124/internal",
+      "locator": "Asymptotics in A081124, A084261 and A137704; continued fractions in A081123 and A081125",
+      "statement": "These remaining formulas are outside the identities established here.", "coverage": "Not covered"
+    }
+  ],
+  "verification_files": ["verify.py", "verify-siblings.py", "checks.json", "checks-siblings.json"],
+  "parameter_values_for_finite_checks": ["-2", "-1", "0", "1/2", "1", "2"]
+}
