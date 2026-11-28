@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24412941",
     "current_version": 2,
     "doi": "10.5281/zenodo.24412942",
+    "kind": "note",
     "lean_source": {
       "revision": "13f4288c2940bd2aa4020cec789956b9265769f5",
       "url": "https://github.com/the-omega-institute/trureturing/blob/13f4288c2940bd2aa4020cec789956b9265769f5/D5/S1/Recurrence/MatharA081124.lean"
@@ -55,10 +56,12 @@
     "title": "Mathar's half-factorial recurrence conjectures: extensions of Jovovic's formulas and Barry's array sums",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-23T15:51:11.701461864Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "mathar-2012-a081124-recurrence"
